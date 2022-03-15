@@ -1,0 +1,27 @@
+<%- dir = "." %>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <%- include('./include/_head.ejs', {dir : dir}) %>
+</head>
+<body>
+  <div class="l-wrapper">
+    <div class="c-content">
+      <h1 class="c-title">p5.js習作ギャラリー</h1>
+      <ul class="c-list">
+        <li class="c-list__item">
+          <a href="./test/" class="c-list__link">
+            <div class="c-list__thumb">
+              <div class="c-list__img" style="background-image: url(./assets/img/test.png);"></div>
+            </div>
+            <div class="c-list__text">
+              <div class="c-list__title">TEST(PC only)</div>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <%- include('./include/_script.ejs', {dir : dir}) %>
+</body>
+</html>

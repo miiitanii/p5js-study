@@ -1,0 +1,71 @@
+
+@mixin min-width($w) {
+  @media screen and (min-width: $w) {
+    @content;
+  }
+}
+
+@mixin max-width($w) {
+  @media screen and (max-width: $w) {
+    @content;
+  }
+}
+
+@mixin min-height($h) {
+  @media screen and (min-height: $h) {
+    @content;
+  }
+}
+
+@mixin max-height($h) {
+  @media screen and (max-height: $h) {
+    @content;
+  }
+}
+
+@mixin pc {
+  @include min-width($break-point) {
+    @content;
+  }
+}
+
+@mixin sp {
+  @include max-width($break-point - 1) {
+    @content;
+  }
+}
+
+@mixin text($font-size:16px, $line-height: 1, $letter-spacing: normal){
+  font-size: $font-size;
+  line-height: $line-height;
+  letter-spacing: $letter-spacing;
+}
+
+@mixin inline-block-wrap(){
+  font-size: 0;
+  letter-spacing: -0.4em;
+  white-space: nowrap;
+  > * {
+    letter-spacing: normal;
+    white-space: normal;
+  }
+}
+
+@mixin bg-temp {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+@mixin op-anim($x: 0px, $y: 0px, $delay: 0s) {
+  transform: translate($x, $y);
+  opacity: 0;
+  transition: opacity 0.8s $ease $delay,
+              transform 0.8s cubic-bezier(0.2, 0.68, 0.29, 0.96) $delay;
+  .is-load & {
+    transform: translate(0px,0px);
+    opacity: 1;
+  }
+}

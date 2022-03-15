@@ -1,0 +1,82 @@
+:root {
+  --base-color: #{$base-color};
+  --text-color: #{$text-color};
+  --link-color: #{$link-color};
+}
+
+body{
+  font-family: $font-default;
+  background-color: var(--base-color);
+  color: var(--text-color);
+  transition: background-color 0.5s $ease 0s, color 0.5s $ease 0s;
+}
+
+a {
+  color: var(--link-color);
+  text-decoration: none;
+}
+
+::selection {
+  background: $selection-bg;
+  color: $selection-text;
+}
+
+//Firefox
+::-moz-selection {
+  background: $selection-bg;
+  color: $selection-text;
+}
+
+.is-pc {
+  @include pc {
+    display: block;
+  }
+  @include sp {
+    display: none;
+  }
+}
+
+.is-sp {
+  @include pc {
+    display: none;
+  }
+  @include sp {
+    display: block;
+  }
+}
+
+.is-pc-inline {
+  @include pc {
+    display: inline;
+  }
+  @include sp {
+    display: none;
+  }
+}
+
+.is-sp-inline {
+  @include pc {
+    display: none;
+  }
+  @include sp {
+    display: inline;
+  }
+}
+
+.is-pc-inline-block {
+  @include pc {
+    display: inline-block;
+  }
+  @include sp {
+    display: none;
+  }
+}
+
+.is-sp-inline-block {
+  @include pc {
+    display: none;
+  }
+  @include sp {
+    display: inline-block;
+  }
+}

@@ -1,0 +1,28 @@
+<%- dir = ".." %>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <%- include('../include/_head.ejs', {dir : dir}) %>
+</head>
+<body>
+  <a href="../" class="c-back">一覧に戻る</a>
+  <!-- <div class="c-source">ソースを見る</a> -->
+  <%- include('../include/_script.ejs', {dir : dir}) %>
+  <script>
+    function setup(){
+      createCanvas(windowWidth, windowHeight);
+      background(0);
+    }
+    function draw() {
+      if (mouseIsPressed) {
+        fill(0);
+        stroke(255);
+      } else {
+        fill(255);
+        stroke(0);
+      }
+      ellipse(mouseX, mouseY, 80, 80);
+    }
+  </script>
+</body>
+</html>

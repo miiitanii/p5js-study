@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap');
+
+$font-goth: "Hiragino Sans W3", "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+$font-min: "游明朝", YuMincho, "Hiragino Mincho ProN W3", "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", serif;
+
+$font-noto: 'Noto Sans JP', $font-goth;
+
+$font-default: $font-noto;
+
+
+$white: #fff;
+$black: #000;
+$highlight: #5975ff;
+$bg-highlight: #b9c5ff;
+$color-list: (
+  1: #000000,
+  2: #ffffff,
+  3: #ff0000,
+  4: #00ff00,
+  5: #0000ff,
+);
+// @each $key, $color in $bg {
+//   &--#{$key} {
+//     background-color: $color;
+//   }
+// }
+$twitter: #1d9bf0;
+
+$black-button-grade: linear-gradient(90deg, $white 0%, $white 33%, $black 66%, $black 100%);
+$twitter-button-grade: linear-gradient(90deg, $white 0%, $white 33%, $twitter 66%, $twitter 100%);
+
+$base-color: $white;
+$text-color: $black;
+$link-color: $black;
+
+$selection-bg: null;
+$selection-text: null;
+
+$break-point: 850px;
+
+$ease: ease;
+$ease-in: ease-in;
+$ease-out: cubic-bezier(0.06, 0.6, 0.48, 0.96);
+$ease-in-out: ease-in-out;

@@ -1,0 +1,164 @@
+.c-content {
+  padding: 50px 0 50px;
+  width: 80%;
+  margin: 0 auto;
+  max-width: 1000px;
+  @include sp(){
+    padding: 15px 0 15px;
+    width: 90%;
+  }
+}
+
+.c-title {
+  @include text(30px, 1.3, 0.01em);
+  font-weight: 700;
+  margin-bottom: 30px;
+  @include sp {
+    margin-bottom: 20px;
+    @include text(25px, 1.3, 0.01em);
+  }
+}
+
+.c-list {
+  display: flex;
+  flex-wrap: wrap;
+  &__item {
+    @include pc(){
+      width: 30.6%;
+      max-width: 300px;
+      margin-right: 4%;
+      &:nth-child(3n){
+        margin-right: 0;
+      }
+      &:nth-child(n+4) {
+        margin-top: 2.5%;
+      }
+    }
+    @include sp(){
+      width: 48%;
+      margin-right: 4%;
+      &:nth-child(2n){
+        margin-right: 0;
+      }
+      &:nth-child(n+3) {
+        margin-top: 4%;
+      }
+    }
+  }
+  @mixin hover-link (){
+    @include pc(){
+      .c-list__link:hover & {
+        @content;
+      }
+    }
+  }
+  &__link {
+    display: block;
+  }
+  &__thumb {
+    position: relative;
+    padding-top: 100%;
+    overflow: hidden;
+    &::after {
+      content: "";
+      @include bg-temp;
+      border: 1px solid $black;
+    }
+  }
+  &__img {
+    @include bg-temp;
+    background-size: cover;
+    background-position: 50% 50%;
+    @include pc(){
+      backface-visibility: hidden;
+      transform: scale(1.00);
+      transition: transform 0.8s $ease-out 0s;
+      @include hover-link() {
+        transform: scale(1.07);
+        transition-timing-function: $ease-out;
+        transition-duration: 0.5s;
+      }
+    }
+  }
+  &__text {
+    margin-top: 7px;
+    @include sp(){
+      margin-top: 5px;
+    }
+  }
+  &__title {
+    overflow-wrap: break-word;
+    @include text(25px, 1.1, 0.01em);
+    @include sp(){
+      @include text(18px, 1.1, 0.01em);
+    }
+
+    @include pc(){
+      color: $black;
+      transition: color 0.5s $ease 0s;
+      @include hover-link() {
+        color: $highlight;
+        transition-duration: 0.2s
+      }
+    }
+  }
+}
+
+.c-back {
+  position: fixed;
+  @include pc(){
+    top: 10px;
+    left: 10px;
+  }
+  @include sp(){
+    bottom: 10px;
+    left: 10px;
+  }
+  display: block;
+  z-index: 10;
+  background-color: $white;
+  padding: 6px 8px 8px 25px;
+  border: 1px solid $black;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: 12px;
+    width: 10px;
+    height: 10px;
+    border-left: 1px solid $black;
+    border-top: 1px solid $black;
+    transform: rotate(-45deg);
+  }
+  @include pc(){
+    background-color: #fff;
+    transition: background-color 0.2s ease 0s;
+    &:hover {
+      background-color: $bg-highlight;
+    }
+  }
+}
+.c-source {
+  position: fixed;
+  cursor: pointer;
+  @include pc(){
+    top: 10px;
+    right: 10px;
+  }
+  @include sp(){
+    bottom: 10px;
+    right: 10px;
+  }
+  display: block;
+  z-index: 10;
+  background-color: $white;
+  padding: 6px 8px 8px;
+  border: 1px solid $black;
+  @include pc(){
+    background-color: #fff;
+    transition: background-color 0.2s ease 0s;
+    &:hover {
+      background-color: $bg-highlight;
+    }
+  }
+}
